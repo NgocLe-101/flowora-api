@@ -20,6 +20,9 @@ import { UserModule } from './user/user.module';
                 password: cfg.get<string>('DB_PASSWORD'),
                 database: cfg.get<string>('DB_NAME'),
                 entities: [User],
+                ssl: {
+                    rejectUnauthorized: false
+                },
                 synchronize: true,
                 logging: false,
             }),
