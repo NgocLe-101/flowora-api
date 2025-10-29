@@ -17,7 +17,6 @@ async function bootstrap() {
     origin: frontendUrl,
   });
   const port = config.get<string>('PORT') ?? 3000;
-    console.log("PORT: ", port);
-  await app.listen(port);
+  await app.listen(port, '0.0.0.0');
 }
 bootstrap();
