@@ -20,6 +20,10 @@ export class UserService {
         return this.usersRepository.findOne({ where: { email } });
     }
 
+    async findById(id: string) {
+        return this.usersRepository.findOne({ where: { id } });
+    }
+
     async create(createUserDto: CreateUserDto) {
         const { email, password } = createUserDto;
         const existing = await this.findByEmail(email);

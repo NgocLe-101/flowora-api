@@ -5,6 +5,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './user/user.entity';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
     imports: [
@@ -20,14 +21,13 @@ import { UserModule } from './user/user.module';
                 password: cfg.get<string>('DB_PASSWORD'),
                 database: cfg.get<string>('DB_NAME'),
                 entities: [User],
-                ssl: {
-                    rejectUnauthorized: false
-                },
+
                 synchronize: true,
                 logging: false,
             }),
         }),
     UserModule,
+    AuthModule,
     ],
 })
 export class AppModule {}
