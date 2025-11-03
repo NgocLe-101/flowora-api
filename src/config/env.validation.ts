@@ -60,6 +60,11 @@ const envVariables: EnvVariable[] = [
     description: 'Frontend URL for CORS configuration',
     defaultValue: '*',
   },
+  {
+    key: 'NODE_ENV',
+    required: true,
+    description: 'Environment variable to detect the deployment environment',
+  },
 ];
 
 export function validateEnvironment(): void {
