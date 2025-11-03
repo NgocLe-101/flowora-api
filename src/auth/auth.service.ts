@@ -20,7 +20,7 @@ export class AuthService {
     private readonly configService: ConfigService,
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
-  ) {}
+  ) { }
 
   async login(loginDto: LoginDto) {
     const { email, password } = loginDto;
@@ -90,7 +90,7 @@ export class AuthService {
 
   async logout(userId: string) {
     // Clear refresh token
-    await this.userRepository.update(userId, { refreshToken: undefined });
+    await this.userRepository.update(userId, { refreshToken: null });
     return { message: 'Logged out successfully' };
   }
 

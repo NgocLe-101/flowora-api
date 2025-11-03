@@ -20,9 +20,9 @@ export class User {
   @Exclude({ toPlainOnly: true })
   password: string;
 
-  @Column({ nullable: true })
+  @Column({ type: 'text', nullable: true })
   @Exclude({ toPlainOnly: true })
-  refreshToken: string;
+  refreshToken: string | null;
 
   @CreateDateColumn()
   createdAt: Date;
