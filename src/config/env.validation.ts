@@ -47,6 +47,23 @@ const envVariables: EnvVariable[] = [
     description: 'JWT refresh token secret (min 32 characters recommended)',
   },
 
+  // Google OAuth Configuration (Required for Google Sign-In)
+  {
+    key: 'GOOGLE_CLIENT_ID',
+    required: true,
+    description: 'Google OAuth Client ID from Google Cloud Console',
+  },
+  {
+    key: 'GOOGLE_CLIENT_SECRET',
+    required: true,
+    description: 'Google OAuth Client Secret from Google Cloud Console',
+  },
+  {
+    key: 'GOOGLE_CALLBACK_URL',
+    required: true,
+    description: 'Google OAuth callback URL (e.g., http://localhost:3000/auth/google/callback)',
+  },
+
   // Server Configuration (Optional with defaults)
   {
     key: 'PORT',

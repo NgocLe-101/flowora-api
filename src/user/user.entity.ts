@@ -16,9 +16,21 @@ export class User {
   @Column({ length: 255 })
   email: string;
 
-  @Column()
+  @Column({ nullable: true })
   @Exclude({ toPlainOnly: true })
-  password: string;
+  password: string | null;
+
+  @Column({ type: 'varchar', length: 255, nullable: true, unique: true })
+  googleId: string | null;
+
+  @Column({ type: 'varchar', length: 255, nullable: true })
+  firstName: string | null;
+
+  @Column({ type: 'varchar', length: 255, nullable: true })
+  lastName: string | null;
+
+  @Column({ type: 'text', nullable: true })
+  picture: string | null;
 
   @Column({ type: 'text', nullable: true })
   @Exclude({ toPlainOnly: true })
